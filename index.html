@@ -58,7 +58,7 @@
 
       <section>
         <h2>Check-in</h2>
-        <form>
+        <form id="checkin-form">
           <label for="nombre">Nombre completo</label>
           <input id="nombre" name="nombre" type="text" required />
 
@@ -70,6 +70,7 @@
 
           <button type="submit">Registrar check-in</button>
         </form>
+        <p id="checkin-status" role="status" aria-live="polite"></p>
       </section>
 
       <section>
@@ -81,5 +82,15 @@
         </ul>
       </section>
     </main>
+    <script>
+      const form = document.getElementById("checkin-form");
+      const status = document.getElementById("checkin-status");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        status.textContent =
+          "Check-in registrado localmente. Recepción confirmará tu información.";
+      });
+    </script>
   </body>
 </html>

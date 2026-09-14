@@ -8,4 +8,4 @@ Portal para huéspedes con una página principal simple para:
 
 ## Uso
 
-Abre `/home/runner/work/Portalhuesped/Portalhuesped/index.html` en tu navegador.
+Abre `index.html` desde la raíz del proyecto en tu navegador.
