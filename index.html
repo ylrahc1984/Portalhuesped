@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal para Huéspedes</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f4f6f8;
+        color: #1f2937;
+      }
+      main {
+        max-width: 760px;
+        margin: 32px auto;
+        padding: 24px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      }
+      h1 {
+        margin-top: 0;
+      }
+      section {
+        margin-top: 24px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      form {
+        display: grid;
+        gap: 10px;
+      }
+      input,
+      button {
+        font: inherit;
+        padding: 10px;
+      }
+      button {
+        cursor: pointer;
+        border: 0;
+        border-radius: 6px;
+        background: #2563eb;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Bienvenido al Portal para Huéspedes</h1>
+      <p>
+        Gestiona tu estancia y encuentra información útil de forma rápida.
+      </p>
+
+      <section>
+        <h2>Check-in</h2>
+        <form id="checkin-form">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" required />
+
+          <label for="habitacion">Número de habitación</label>
+          <input
+            id="habitacion"
+            name="habitacion"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]+"
+            required
+          />
+
+          <label for="llegada">Fecha de llegada</label>
+          <input id="llegada" name="llegada" type="date" required />
+
+          <button type="submit">Registrar check-in</button>
+        </form>
+        <p id="checkin-status" role="status" aria-live="polite" aria-atomic="true">
+          &nbsp;
+        </p>
+      </section>
+
+      <section>
+        <h2>Servicios</h2>
+        <ul>
+          <li>Wi‑Fi sin costo</li>
+          <li>Servicio a la habitación</li>
+          <li>Soporte en recepción 24/7</li>
+        </ul>
+      </section>
+    </main>
+    <script>
+      const form = document.getElementById("checkin-form");
+      const status = document.getElementById("checkin-status");
+
+      if (form && status) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          status.textContent =
+            "Check-in registrado localmente. Recepción confirmará tu información.";
+        });
+      }
+    </script>
+  </body>
+</html>
