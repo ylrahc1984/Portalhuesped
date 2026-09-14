@@ -70,7 +70,7 @@
 
           <button type="submit">Registrar check-in</button>
         </form>
-        <p id="checkin-status" role="status" aria-live="polite" tabindex="-1"></p>
+        <p id="checkin-status" role="status" aria-live="polite"></p>
       </section>
 
       <section>
@@ -90,7 +90,6 @@
         event.preventDefault();
         status.textContent =
           "Check-in registrado localmente. Recepción confirmará tu información.";
-        status.focus();
       });
     </script>
   </body>
