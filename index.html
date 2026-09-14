@@ -86,11 +86,13 @@
       const form = document.getElementById("checkin-form");
       const status = document.getElementById("checkin-status");
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        status.textContent =
-          "Check-in registrado localmente. Recepción confirmará tu información.";
-      });
+      if (form && status) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          status.textContent =
+            "Check-in registrado localmente. Recepción confirmará tu información.";
+        });
+      }
     </script>
   </body>
 </html>
