@@ -66,9 +66,9 @@
           <input
             id="habitacion"
             name="habitacion"
-            type="number"
-            min="1"
-            step="1"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]+"
             required
           />
 
@@ -77,7 +77,9 @@
 
           <button type="submit">Registrar check-in</button>
         </form>
-        <p id="checkin-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <p id="checkin-status" role="status" aria-live="polite" aria-atomic="true">
+          Estado: pendiente de envío.
+        </p>
       </section>
 
       <section>
